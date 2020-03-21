@@ -9,7 +9,7 @@ import StreamList from './streams/StreamList';
 import StreamShow from './streams/StreamShow';
 
 //Exact == Exact URL, else it looks if the url Contains the path
-//Router prevents reloading by browser
+//Router prevents reloading by browser 
 
 const App = () => {
     return (

@@ -1,2 +1,2 @@
 # react-streams
-A new app
+A good base for future apps

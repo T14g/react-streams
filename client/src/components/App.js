@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
 import StreamCreate from './streams/StreamCreate';
@@ -11,18 +11,22 @@ import history from '../history';
 
 //Exact == Exact URL, else it looks if the url Contains the path
 //Router prevents reloading by browser 
+//Switch only shows the first match!
+//o código iria mostrar a Route com path /:id e a route new, pois /:id é 1 wildcard = qualquercoisa
 
 const App = () => {
     return (
         <div className="ui container">
             <Router history={history}>
-            <Header/>
                 <div>
+                    <Header/>
+                    <Switch>
                     <Route path="/" exact component={StreamList} />
                     <Route path="/streams/new" exact component={StreamCreate} />
                     <Route path="/streams/edit/:id" exact component={StreamEdit} />
                     <Route path="/streams/delete/:id" exact component={StreamDelete} />
-                    <Route path="/streams/show" exact component={StreamShow} />
+                    <Route path="/streams/:id" exact component={StreamShow} />
+                    </Switch>
                 </div>
             </Router>
         </div>
